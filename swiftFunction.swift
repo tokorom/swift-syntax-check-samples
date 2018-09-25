@@ -26,3 +26,14 @@ print(bar({ () -> String in return "bar" }))
 
 let block: (Int, Int) -> Int = { return $0 + $1 }
 print(block(1, 2))
+
+func relayTuple(tuple: (Int, Int)) -> Int {
+    return tuple.0 + tuple.1
+}
+print(relayTuple(tuple: (1, 2)))
+
+func relayComplexTuple(tuple: ((Int, Int), Int)) -> Int {
+    return tuple.0.0 + tuple.0.1 + tuple.1
+}
+print(relayComplexTuple(tuple: ((1, 2), 3)))
+

@@ -5,37 +5,44 @@
 //
 
 print("")
+print("\()")
 
 print("Hello Swift")
 
 print("Hello 日本語")
 
-let interpolation = "interpolation"
+let bar = "bar"
 
-print("\(interpolation)")
-print("try \(interpolation)")
-print("\(interpolation)...finish")
-print("\(interpolation) and \(interpolation)")
+print("\(bar)")
+print("try \(bar)")
+print("\(bar)...finish")
+print("\(bar) and \(bar)")
+print("\("inner bar")")
+print("\("inner ()")")
+print("\("inner ((1)(2))")")
 
-let interpolations = [1, 2, 3]
+let baz = [1, 2, 3]
 
-print("\(interpolations[0])")
-print("try \(interpolations[0])")
-print("\(interpolations[0])...finish")
-print("\(interpolations[0]) and \(interpolations[0])")
+print("\(baz[0])")
+print("try \(baz[0])")
+print("\(baz[0])...finish")
+print("\(baz[0]) and \(baz[0])")
 
-func swiftInterpolation(completion: (() -> String)? = nil) -> String {
+func foo(_ completion: (() -> String)? = nil) -> String {
     guard let completion = completion else {
         return "nil"
     }
     return completion()
 }
 
-print("\(swiftInterpolation())")
-print("try \(swiftInterpolation())")
-print("\(swiftInterpolation())...finish")
+print("\(foo())")
+print("try \(foo())")
+print("\(foo())...finish")
 
-print("\(swiftInterpolation(completion: { () -> String in return "hello" }))")
-print("try \(swiftInterpolation(completion: { () -> String in return "hello" }))")
-print("\(swiftInterpolation(completion: { () -> String in return "hello" }))...finish")
-print("\(swiftInterpolation(completion: { () -> String in return "hello" })) and \(interpolation)")
+print("\(foo({ () -> String in return "hello" }))")
+print("\(foo({ () -> String in return foo({ () -> String in return "hello" }) }))")
+print("\(foo({ () -> String in return "\(foo({ () -> String in return "hello" }))" }))")
+
+print("try \(foo({ () -> String in return "hello" }))")
+print("\(foo({ () -> String in return "hello" }))...finish")
+print("\(foo({ () -> String in return "hello" })) and \(bar)")

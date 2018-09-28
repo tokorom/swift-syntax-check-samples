@@ -86,12 +86,12 @@ case .int(let int):
     print(int)
 }
 
-let dict: [Int: (Int, Int)] = {
-    "foo": (Int, Int),
-    "bar": { (lhs: Int, rhs: Int) -> Int in
-        return 100
-    }
-}
+let dict: [Int: (Int, Int)] = [
+    0: (1, 2),
+    1: { () -> (Int, Int) in
+        return (1, 2)
+    }()
+]
 
 func allItemsMatch<C1: Container, C2: Container> (_ someContainer: C1, _ anotherContainer: C2) -> Bool
     where C1.Item == C2.Item, C1.Item: Equatable {

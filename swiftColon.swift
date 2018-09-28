@@ -51,6 +51,11 @@ class Foo: NSObject {
     func testInOut(_ int: inout Int) {
         int = 10
     }
+
+    func normal() {
+        let message = "hello"
+        say(message: message)
+    }
 }
 
 let foo = Foo(

@@ -52,3 +52,9 @@ stackOfInts.append(30)
 let suffix = stackOfInts.suffix(2)
 
 print(suffix)
+
+
+typealias Go<Int> = Int
+let go: Go<Int> = 100
+print(go)
+

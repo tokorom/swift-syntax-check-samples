@@ -1,30 +1,26 @@
 import
-Foundation
+    Foundation
 
-class Foo<T>: NSObject
-    where T: Int
+class Foo:
+    NSObject
 {
     static
     func
     bar(
         _ lhs:
-        Int,
+            Int,
         _ rhs:
+            Int
+    ) ->
         Int
-    )
-    ->
-    Int
     {
-        return
-        lhs
-        +
-        rhs
+        return lhs + rhs
     }
 }
 
 print(
     Foo.bar(
         1,
-        1_000
+        1_001
     )
 )

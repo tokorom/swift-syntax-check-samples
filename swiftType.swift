@@ -1,8 +1,8 @@
-let int: Int? = 100
-print(i!)
+class Foo<T> {
+    let int: Int? = nil
+    let array: [Int]? = nil
+    let tuple: (Int, Int)? = nil
+    let generic: Foo<T>? = nil
 
-let array: [Int]? = [100]
-print(array!)
-
-let tuple: (Int, Int)? = (1, 2)
-print(tuple!)
+    let dict: [Int?: Int?] = [:]
+}
